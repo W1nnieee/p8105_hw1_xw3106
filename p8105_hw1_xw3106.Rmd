@@ -1,5 +1,11 @@
 ---
 title: "p8105_hw1_xw3106"
-output: html_document
+Author: "Xinyu Wang(xw3106)"
+output: github_document
 ---
+#Problem 1
+```{r}
+library(moderndive)
+data("early_january_weather")
+```
 
