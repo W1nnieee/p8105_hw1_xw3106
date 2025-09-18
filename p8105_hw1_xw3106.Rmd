@@ -37,10 +37,10 @@ df = tibble(
 df
 ```
 ```{r}
-mean(df %>% pull(vec_numeric))
-mean(df %>% pull(vec_logical))
-mean(df %>% pull(vec_char))
-mean(df %>% pull(vec_factor))
+df |> pull(vec_numeric) |> mean()
+df |> pull(vec_logical) |> mean()
+df |> pull(vec_char) |> mean()
+df |> pull(vec_factor) |> mean()
 ```
 The mean works for numeric and logical vectors. It does not work on char and factor vectors.
 
