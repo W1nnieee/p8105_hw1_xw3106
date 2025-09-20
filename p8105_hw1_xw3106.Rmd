@@ -18,6 +18,7 @@ library(ggplot2)
 plot1 <- ggplot(early_january_weather, aes(x = time_hour, y = temp, color = humid)) + geom_point() 
 plot1 + labs(title = "Hourly Temperature and Humidity change of January 2013", x = "Time(hour)", y = "Temperature(F)") + scale_x_datetime(date_breaks = "2 day", date_labels = "%b %d")
 
+ggsave(ggsave("temperature_vs_humid_change.pdf", plot = plot1))
 ```
 
 The scatter plot shows the temperature tends to increases during the middle of day and drop at night, and it repeats with a daily cycle. Lower humidity level are associated with temprature decrease from the daily peak. From Jan12-Jan14, temprature remained relatively constant with a high humidity level. After 12pm on Jan 14, humidity dropped sharply followed by a noticeble temperature decrease. 
@@ -45,7 +46,7 @@ df |> pull(vec_factor) |> mean()
 ```
 The mean works for numeric and logical vectors. It does not work on char and factor vectors.
 
-```{r include=FALSE}
+```{r results='hide'}
 df |> pull(vec_logical) |> as.numeric()
 df |> pull(vec_char) |> as.numeric()
 df |> pull(vec_factor) |> as.numeric()
